@@ -2,28 +2,27 @@
 
 ## Core & Dependencies
 
-- [ ] lazy.nvim (package manager)
-- [ ] plenary.nvim (lua functions)
-- [ ] nui.nvim (UI components)
+- [x] lazy.nvim (package manager)
+- [x] plenary.nvim (lua functions)
+- [x] nui.nvim (UI components)
 
 ## LSP & Completion
 
-- [ ] nvim-lspconfig (LSP configuration)
-- [ ] mason.nvim + mason-lspconfig.nvim (LSP manager)
-- [ ] nvim-cmp (completion engine)
-- [ ] cmp-nvim-lsp (LSP source)
-- [ ] cmp-buffer (buffer words)
-- [ ] cmp-path (filesystem)
-- [ ] LuaSnip (snippet engine)
-- [ ] cmp_luasnip (snippets for cmp)
-- [ ] friendly-snippets (snippet collection)
+- [x] nvim-lspconfig (LSP configuration)
+- [x] mason.nvim + mason-lspconfig.nvim (LSP manager)
+- [x] nvim-cmp (completion engine)
+- [x] cmp-nvim-lsp (LSP source)
+- [x] cmp-buffer (buffer words)
+- [x] cmp-path (filesystem)
+- [x] LuaSnip (snippet engine)
+- [x] cmp_luasnip (snippets for cmp)
+- [x] friendly-snippets (snippet collection)
 
 ## Syntax & Code Analysis
 
-- [ ] nvim-treesitter (parser)
-- [ ] nvim-treesitter-textobjects (code navigation)
-- [ ] nvim-ts-autotag (HTML/JSX tags)
-- [ ] rainbow-delimiters.nvim (delimiter pairs)
+- [x] nvim-treesitter (parser)
+- [x] nvim-treesitter-textobjects (code navigation)
+- [x] nvim-ts-autotag (HTML/JSX tags)
 
 ## Navigation & Search
 
