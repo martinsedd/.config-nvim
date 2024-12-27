@@ -1,4 +1,5 @@
 return {
+	-- Tokyo Night Colorscheme
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -12,6 +13,8 @@ return {
 			vim.cmd([[colorscheme tokyonight]])
 		end,
 	},
+
+	-- Lualine Status Line
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
@@ -26,6 +29,8 @@ return {
 			})
 		end,
 	},
+
+	-- Bufferline Plugin
 	{
 		"akinsho/bufferline.nvim",
 		event = "VeryLazy",
@@ -39,6 +44,8 @@ return {
 			})
 		end,
 	},
+
+	-- Noice Plugin for LSP Enhancements
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -62,6 +69,8 @@ return {
 			},
 		},
 	},
+
+	-- Dressing Plugin for Improved UI
 	{
 		"stevearc/dressing.nvim",
 		lazy = true,
@@ -76,10 +85,14 @@ return {
 			end
 		end,
 	},
+
+	-- Web Devicons Dependency
 	{
 		"nvim-tree/nvim-web-devicons",
 		lazy = true,
 	},
+
+	-- Indent Blankline Plugin with Rainbow Colors
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
@@ -95,8 +108,6 @@ return {
 			}
 
 			local hooks = require("ibl.hooks")
-			-- create the highlight groups in the highlight setup hook, so they are reset
-			-- every time the colorscheme changes
 			hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
 				vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
 				vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
@@ -115,6 +126,8 @@ return {
 			})
 		end,
 	},
+
+	-- Notification Plugin
 	{
 		"rcarriga/nvim-notify",
 		lazy = true,
@@ -127,6 +140,8 @@ return {
 			vim.notify = require("notify")
 		end,
 	},
+
+	-- Barbecue Plugin for Breadcrumbs
 	{
 		"utilyre/barbecue.nvim",
 		name = "barbecue",

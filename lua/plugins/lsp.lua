@@ -3,7 +3,7 @@ local M = {
 	-- Core LSP plugins
 	{
 		"kosayoda/nvim-lightbulb",
-		dependencies = { "nvim-lspconfig" },
+		dependencies = { "neovim/nvim-lspconfig" },
 		config = function()
 			require("nvim-lightbulb").setup({
 				autocmd = { enabled = true },
@@ -32,35 +32,32 @@ local M = {
 				local keymap = vim.keymap.set
 
 				-- Navigation
-				keymap("n", "gD", vim.lsp.buf.declaration, opts)
-				keymap("n", "gd", vim.lsp.buf.definition, opts)
-				keymap("n", "gi", vim.lsp.buf.implementation, opts)
-				keymap("n", "gr", vim.lsp.buf.references, opts)
+				keymap("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration", buffer = bufnr })
+				keymap("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition", buffer = bufnr })
+				keymap("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation", buffer = bufnr })
+				keymap("n", "gr", vim.lsp.buf.references, { desc = "Go to references", buffer = bufnr })
 
 				-- Information
-				keymap("n", "K", vim.lsp.buf.hover, opts)
-				keymap("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+				keymap("n", "K", vim.lsp.buf.hover, { desc = "Hover information", buffer = bufnr })
+				keymap("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature help", buffer = bufnr })
 
 				-- Code modification
-				keymap("n", "<leader>rn", vim.lsp.buf.rename, opts)
-				keymap("n", "<leader>ca", function()
-					vim.lsp.buf.code_action()
-				end, { buffer = bufnr, desc = "Code actions" })
+				keymap("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol", buffer = bufnr })
+				keymap("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions", buffer = bufnr })
 				keymap("n", "<leader>f", function()
 					vim.lsp.buf.format({ async = true })
-				end, opts)
+				end, { desc = "Format buffer", buffer = bufnr })
 			end
 
 			-- Mason setup
 			require("mason").setup({})
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls" },
+				ensure_installed = { "lua_ls", "pyright", "ts_ls", "gopls", "jsonls", "yamlls" },
 				automatic_installation = true,
 			})
 
 			-- LSP server configurations
 			local servers = {
-				-- Lua
 				lua_ls = {
 					settings = {
 						Lua = {
@@ -75,16 +72,13 @@ local M = {
 						},
 					},
 				},
-				-- Standard configs
-				vimls = {}, -- Vim/Vimdoc
-				ts_ls = {}, -- TypeScript/JavaScript
-				pyright = {}, -- Python
-				gopls = {}, -- Go
-				jdtls = {}, -- Java
-				sqlls = {}, -- SQL
-				jsonls = {}, -- JSON
-				yamlls = {}, -- YAML
-				marksman = {}, -- Markdown
+				ts_ls = {},
+				pyright = {},
+				gopls = {},
+				jsonls = {},
+				yamlls = {},
+				marksman = {},
+				sqlls = {},
 			}
 
 			-- Set up all servers
@@ -96,10 +90,10 @@ local M = {
 
 			-- Diagnostic signs
 			local signs = {
-				{ name = "DiagnosticSignError", text = "" },
-				{ name = "DiagnosticSignWarn", text = "" },
-				{ name = "DiagnosticSignHint", text = "" },
-				{ name = "DiagnosticSignInfo", text = "" },
+				{ name = "DiagnosticSignError", text = "✘" },
+				{ name = "DiagnosticSignWarn", text = "▲" },
+				{ name = "DiagnosticSignHint", text = "⚑" },
+				{ name = "DiagnosticSignInfo", text = "ℹ" },
 			}
 
 			for _, sign in ipairs(signs) do

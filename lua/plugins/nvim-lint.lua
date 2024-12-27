@@ -5,27 +5,35 @@ return {
 		config = function()
 			local lint = require("lint")
 
+			-- Configure linters for each filetype
 			lint.linters_by_ft = {
-				lua = { "luacheck" }, -- Lua linter
-				vim = { "vint" }, -- Vimscript linter
-				vimdoc = { "vint" }, -- Vimdoc uses the same linter as Vimscript
-				typescript = { "eslint" }, -- TypeScript linter
-				javascript = { "eslint" }, -- JavaScript linter
-				python = { "pylint" }, -- Python linter
-				go = { "golangcilint" }, -- Go linter
-				java = { "checkstyle" }, -- Java linter
-				sql = { "sqlfluff" }, -- SQL linter
-				json = { "jsonlint" }, -- JSON linter
-				yaml = { "yamllint" }, -- YAML linter
-				markdown = { "markdownlint" }, -- Markdown linter
-				markdown_inline = { "markdownlint" }, -- Markdown Inline
+				lua = { "luacheck" },
+				vim = { "vint" },
+				vimdoc = { "vint" },
+				typescript = { "eslint" },
+				javascript = { "eslint" },
+				python = { "pylint" },
+				go = { "golangcilint" },
+				java = { "checkstyle" },
+				sql = { "sqlfluff" },
+				json = { "jsonlint" },
+				yaml = { "yamllint" },
+				markdown = { "markdownlint" },
+				markdown_inline = { "markdownlint" },
 			}
 
-			vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+			-- Automatically lint files on save
+			vim.api.nvim_create_autocmd("BufWritePost", {
 				callback = function()
-					require("lint").try_lint()
+					lint.try_lint()
 				end,
+				desc = "Run linter on file save",
 			})
+
+			-- Optional keybinding to manually trigger linting
+			vim.keymap.set("n", "<leader>li", function()
+				lint.try_lint()
+			end, { desc = "Run linting manually" })
 		end,
 	},
 }

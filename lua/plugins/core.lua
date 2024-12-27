@@ -33,23 +33,19 @@ return {
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
+		opts = {},
 		keys = {
 			{
 				"<leader>?",
 				function()
 					require("which-key").show({ global = false })
 				end,
-				desc = "Buffer Local Keymaps (which-key)",
+				desc = "Show buffer-local keymaps",
 			},
 		},
 	},
-	-- telescope.nvim
 
+	-- telescope.nvim
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
@@ -60,31 +56,30 @@ return {
 		keys = {
 			{ "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find Files" },
 			{ "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Live Grep" },
-			{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Buffers" },
-			{ "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Help Tags" },
+			{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find Buffers" },
+			{ "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Help Tags" },
 		},
 		config = function()
-			require("telescope").setup({
+			local telescope = require("telescope")
+			telescope.setup({
 				defaults = {
 					file_ignore_patterns = { "node_modules", ".git/" },
 					mappings = {
-						i = { -- Insert mode mappings
+						i = {
 							["<C-j>"] = require("telescope.actions").move_selection_next,
 							["<C-k>"] = require("telescope.actions").move_selection_previous,
 						},
-						n = { -- Normal mode mappings
+						n = {
 							["<C-j>"] = require("telescope.actions").move_selection_next,
 							["<C-k>"] = require("telescope.actions").move_selection_previous,
 						},
 					},
 				},
 				pickers = {
-					find_files = {
-						hidden = true,
-					},
+					find_files = { hidden = true },
 				},
 			})
-			require("telescope").load_extension("fzf")
+			telescope.load_extension("fzf")
 		end,
 	},
 
@@ -126,14 +121,10 @@ return {
 
 	-- nvim-ts-autotag
 	{
-		"windwp/nvim-ts-autotag", -- Correctly specified plugin repository
-		dependencies = { "nvim-treesitter/nvim-treesitter" }, -- Ensure dependency on treesitter
+		"windwp/nvim-ts-autotag",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		config = function()
 			require("nvim-ts-autotag").setup({
-				-- Enable or disable auto-closing
-				auto_close = true,
-
-				-- Filetypes to enable autotagging
 				filetypes = {
 					"html",
 					"javascript",
@@ -147,24 +138,6 @@ return {
 					"php",
 					"markdown",
 					"astro",
-				},
-
-				-- Whether to allow self-closing on specific filetypes
-				self_closing = {
-					enable = true,
-					filetypes = { "xml", "html", "javascript", "typescript", "vue", "svelte", "jsx", "tsx" },
-				},
-
-				-- Whether to remove closing tags when the opening tag is removed
-				remove_close_tag = true,
-
-				-- Whether to allow rename of paired tags
-				rename_close_tag = true,
-
-				-- Highlight the closing tag
-				highlight = {
-					enable = true,
-					color = "#ff0000", -- Set your preferred color
 				},
 			})
 		end,

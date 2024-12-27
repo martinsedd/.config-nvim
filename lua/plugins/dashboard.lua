@@ -19,7 +19,7 @@ return {
 					},
 					center = {
 						{
-							icon = " ",
+							icon = " ",
 							icon_hl = "Title",
 							desc = "Find File",
 							desc_hl = "String",
@@ -28,7 +28,7 @@ return {
 							action = "Telescope find_files",
 						},
 						{
-							icon = " ",
+							icon = " ",
 							icon_hl = "Title",
 							desc = "Recent Files",
 							desc_hl = "String",
@@ -37,7 +37,7 @@ return {
 							action = "Telescope oldfiles",
 						},
 						{
-							icon = " ",
+							icon = " ",
 							icon_hl = "Title",
 							desc = "Find Word",
 							desc_hl = "String",

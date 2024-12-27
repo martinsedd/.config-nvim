@@ -25,14 +25,14 @@ return {
 				function()
 					require("ufo").openFoldsExceptKinds()
 				end,
-				desc = "Open all folds except kinds",
+				desc = "Open all folds except specific kinds",
 			},
 			{
 				"zm",
 				function()
 					require("ufo").closeFoldsWith()
 				end,
-				desc = "Close all folds with",
+				desc = "Close all folds with specific kinds",
 			},
 			{
 				"K",
@@ -42,7 +42,7 @@ return {
 						vim.lsp.buf.hover()
 					end
 				end,
-				desc = "Peek folded lines",
+				desc = "Peek folded lines or show hover",
 			},
 		},
 		opts = {
@@ -61,8 +61,11 @@ return {
 			},
 		},
 		init = function()
+			-- Set folding defaults
+			vim.o.foldenable = true
 			vim.o.foldlevel = 99
 			vim.o.foldlevelstart = 99
+			vim.o.foldcolumn = "1"
 		end,
 	},
 }

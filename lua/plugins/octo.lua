@@ -15,18 +15,19 @@ return {
 				pull_request_icon = "", -- Icon for pull requests (optional)
 				mappings = {
 					issue = {
-						close_issue = "<space>ic", -- Close issue
-						reopen_issue = "<space>io", -- Reopen issue
-						list_issues = "<space>il", -- List issues
-						-- Add more mappings as needed
+						close_issue = "<leader>ic", -- Close issue
+						reopen_issue = "<leader>io", -- Reopen issue
+						list_issues = "<leader>il", -- List issues
 					},
 					pull_request = {
-						checkout_pr = "<space>pc", -- Checkout PR
-						merge_pr = "<space>pm", -- Merge PR
-						-- Add more mappings as needed
+						checkout_pr = "<leader>pc", -- Checkout PR
+						merge_pr = "<leader>pm", -- Merge PR
 					},
 				},
 			})
+
+			-- Keybindings to invoke the Octo command
+			vim.keymap.set("n", "<leader>gh", "<cmd>Octo<CR>", { desc = "Open Octo" })
 		end,
 	},
 }

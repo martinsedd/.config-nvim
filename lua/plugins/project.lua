@@ -40,11 +40,16 @@ return {
 				},
 			})
 
-			-- Optional: Telescope integration
+			-- Telescope integration
 			require("telescope").load_extension("projects")
 
-			-- Optional: Add keymapping for project search
-			vim.keymap.set("n", "<leader>fp", ":Telescope projects<CR>", { noremap = true, silent = true })
+			-- Keybinding for project search
+			vim.keymap.set(
+				"n",
+				"<leader>fp",
+				"<cmd>Telescope projects<CR>",
+				{ desc = "Find Projects with Telescope", noremap = true, silent = true }
+			)
 		end,
 		dependencies = { "nvim-telescope/telescope.nvim" },
 		lazy = false,
