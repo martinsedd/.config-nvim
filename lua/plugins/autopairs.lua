@@ -1,5 +1,3 @@
--- lua/plugins/coding/autopairs.lua
--- TODO: Test
 return {
 	{
 		"windwp/nvim-autopairs",
