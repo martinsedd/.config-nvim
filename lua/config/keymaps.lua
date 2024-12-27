@@ -44,3 +44,7 @@ m("n", "<leader>nf", ":Neogen func<CR>", opts)
 m("n", "<leader>nc", ":Neogen class<CR>", opts)
 m("n", "<leader>nt", ":Neogen type<CR>", opts)
 m("n", "<leader>nF", ":Neogen file<CR>", opts)
+
+-- Buffer
+m("n", "<C-a>", "ggVG", { desc = "Select all text in active buffer" })
+m({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", { desc = "Save current buffer" })

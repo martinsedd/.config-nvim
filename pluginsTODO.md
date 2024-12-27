@@ -26,120 +26,78 @@
 
 ## Navigation & Search
 
-- [ ] fzf-lua (fuzzy finder)
-- [ ] flash.nvim (motion)
-- [ ] nvim-tree.lua (project overview)
-- [ ] barbecue.nvim (winbar context)
-- [ ] oil.nvim
+- [x] fzf-lua (fuzzy finder)
+- [x] flash.nvim (motion)
+- [x] nvim-tree.lua (project overview)
+- [x] barbecue.nvim (winbar context)
+- [x] oil.nvim
 
 ## Code Quality
 
-- [ ] conform.nvim (formatting)
-- [ ] nvim-lint (linting)
-- [ ] trouble.nvim (diagnostics)
-- [ ] todo-comments.nvim (TODO comments)
-- [ ] neogen.nvim (documentation generation)
+- [x] conform.nvim (formatting)
+- [x] nvim-lint (linting)
+- [x] trouble.nvim (diagnostics)
+- [x] todo-comments.nvim (TODO comments)
+- [x] neogen.nvim (documentation generation)
 
 # Quality of Life
 
 ## Editor Enhancement
 
-- [ ] mini.pairs (auto pairs)
-- [ ] mini.ai (better text objects)
-- [ ] mini.animate (smooth animations)
-- [ ] mini.indentscope (indent guides)
-- [ ] nvim-various-textobjs (text objects)
-- [ ] comment.nvim (commenting)
-- [ ] which-key.nvim (key binding hints)
-- [ ] nvim-surround (surroundings)
-- [ ] yanky.nvim (clipboard manager)
-- [ ] hlchunk.nvim (chunk highlighting)
-- [ ] modicator.nvim (mode indicator)
-- [ ] hardtime.nvim (vim habits)
+- [x] comment.nvim (commenting)
+- [x] which-key.nvim (key binding hints)
+- [x] nvim-surround (surroundings)
+- [x] yanky.nvim (clipboard manager)
 - [ ] copilot.lua (AI completion)
 
 ## User Interface
 
-- [ ] noice.nvim (command line, popups)
-- [ ] lualine.nvim (status line)
-- [ ] bufferline.nvim (buffer tabs)
-- [ ] nvim-web-devicons (icons)
-- [ ] nvim-ufo (folding)
-- [ ] pretty-fold.nvim (fold preview)
+- [x] noice.nvim (command line, popups)
+- [x] lualine.nvim (status line)
+- [x] bufferline.nvim (buffer tabs)
+- [x] nvim-web-devicons (icons)
+- [x] nvim-ufo (folding)
+- [x] pretty-fold.nvim (fold preview)
 
 ## Git Integration
 
-- [ ] lazygit.nvim (git TUI)
-- [ ] gitsigns.nvim (git decorations)
-- [ ] diffview.nvim (better diffs)
-- [ ] octo.nvim (GitHub integration)
+- [x] lazygit.nvim (git TUI)
+- [x] gitsigns.nvim (git decorations)
+- [x] octo.nvim (GitHub integration)
 
 ## Development Tools
 
-- [ ] overseer.nvim (task runner)
-- [ ] rest.nvim (HTTP client)
-- [ ] markdown-preview.nvim (markdown preview)
+- [x] overseer.nvim (task runner)
+- [x] rest.nvim (HTTP client)
+- [x] markdown-preview.nvim (markdown preview)
 
 ## Database
 
-- [ ] vim-dadbod (database interface)
-- [ ] vim-dadbod-ui (UI layer)
-- [ ] vim-dadbod-completion (SQL completion)
+- [x] vim-dadbod (database interface)
+- [x] vim-dadbod-ui (UI layer)
+- [x] vim-dadbod-completion (SQL completion)
 
 # Extras
 
 ## UI Enhancements
 
-- [ ] alpha-nvim (start screen)
-- [ ] nvim-notify (notifications)
-- [ ] dressing.nvim (UI improvements)
+- [x] dashboard-nvim (start screen)
+- [x] nvim-notify (notifications)
+- [x] dressing.nvim (UI improvements)
 
 ## Navigation & Productivity
 
-- [ ] harpoon (file marking)
-- [ ] nvim-bqf (quickfix enhancements)
-- [ ] treesitter-context (context header)
-- [ ] grug-far (find and replace)
+- [x] harpoon (file marking)
+- [x] nvim-bqf (quickfix enhancements)
+- [x] treesitter-context (context header)
+- [x] grug-far (find and replace)
 
 ## Language Specific
 
-- [ ] rust-tools.nvim (Rust)
-- [ ] go.nvim (Go)
-- [ ] typescript.nvim (TypeScript)
-- [ ] nvim-dap + nvim-dap-ui (debugging)
+- [x] go.nvim (Go)
+- [x] typescript.nvim (TypeScript)
+- [x] nvim-dap + nvim-dap-ui (debugging)
 
 ## Focus & Organization
 
-- [ ] zen-mode.nvim (focus mode)
-- [ ] twilight.nvim (code dimming)
-- [ ] symbols-outline.nvim (code outline)
-- [ ] project.nvim (project management)
-
-# Required Dependencies by Language
-
-## TypeScript/JavaScript
-
-- [ ] tsserver
-- [ ] eslint-lsp
-- [ ] prettier
-
-## Python
-
-- [ ] pyright/pylsp
-- [ ] black
-- [ ] ruff
-
-## Go
-
-- [ ] gopls
-- [ ] gofmt/gofumpt
-
-## Java
-
-- [ ] jdtls
-- [ ] google-java-format
-
-## SQL
-
-- [ ] sqlls
-- [ ] sqlfmt
+- [x] project.nvim (project management)
